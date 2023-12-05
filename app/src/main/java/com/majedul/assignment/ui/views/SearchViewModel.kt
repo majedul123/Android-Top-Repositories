@@ -1,5 +1,6 @@
 package com.majedul.assignment.ui.views
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.majedul.assignment.data.model.Items
@@ -15,18 +16,21 @@ class SearchViewModel(private val topHeadlineRepository: DataRepository) : ViewM
     private val _uiState = MutableStateFlow<UiState<List<Items>>>(UiState.Loading)
 
     val uiState: StateFlow<UiState<List<Items>>> = _uiState
+    val TAG = "SearchViewModel"
 
     init {
-        fetchTopHeadlines()
+        fetchSearchData()
     }
 
-    private fun fetchTopHeadlines() {
+    private fun fetchSearchData() {
+        Log.d(TAG," on fetchSearchData method")
         viewModelScope.launch {
-            topHeadlineRepository.getSearchItems("android","star")
+            topHeadlineRepository.getSearchItems("android","stars")
                 .catch { e ->
                     _uiState.value = UiState.Error(e.toString())
                 }
                 .collect {
+                    Log.d(TAG," on fetchSearchData item List $it")
                     _uiState.value = UiState.Success(it)
                 }
         }

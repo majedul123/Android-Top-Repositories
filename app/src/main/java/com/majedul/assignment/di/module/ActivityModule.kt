@@ -8,6 +8,7 @@ import dagger.Provides
 import com.majedul.assignment.data.repository.DataRepository
 import com.majedul.assignment.di.ActivityContext
 import com.majedul.assignment.ui.base.ViewModelProviderFactory
+import com.majedul.assignment.ui.views.SearchAdapter
 import com.majedul.assignment.ui.views.SearchViewModel
 
 @Module
@@ -20,12 +21,13 @@ class ActivityModule(private val activity: AppCompatActivity) {
     }
 
     @Provides
-    fun provideTopHeadlineViewModel(topHeadlineRepository: DataRepository): SearchViewModel {
+    fun provideSearchViewModel(topHeadlineRepository: DataRepository): SearchViewModel {
         return ViewModelProvider(activity,
             ViewModelProviderFactory(SearchViewModel::class) {
                 SearchViewModel(topHeadlineRepository)
             })[SearchViewModel::class.java]
     }
-
+    @Provides
+    fun provideSearchAdapter() = SearchAdapter(ArrayList())
 
 }

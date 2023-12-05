@@ -22,7 +22,7 @@ class ApplicationModule(private val application: MVVMApplication) {
 
     @BaseUrl
     @Provides
-    fun provideBaseUrl(): String = "https://api.github.com/search/repositories"
+    fun provideBaseUrl(): String = "https://api.github.com/"
 
     @Provides
     @Singleton
