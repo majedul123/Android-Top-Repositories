@@ -49,7 +49,7 @@ class SearchActivity : AppCompatActivity() {
                 (recyclerView.layoutManager as LinearLayoutManager).orientation
             )
         )
-    //   recyclerView.adapter = adapter
+      recyclerView.adapter = adapter
     }
 
     private fun setupObserver() {

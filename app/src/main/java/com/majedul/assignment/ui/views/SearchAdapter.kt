@@ -3,6 +3,7 @@ package com.majedul.assignment.ui.views
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.majedul.assignment.data.model.Items
 import com.majedul.mvvm.databinding.SearchItemBinding
 
@@ -14,7 +15,11 @@ class SearchAdapter(
     class DataViewHolder(private val binding: SearchItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item:Items) {
-//            binding.textViewTitle.text = article.title
+             binding.repositoryName.text = item.name
+             binding.repositoryDescription.text = item.description
+            Glide.with(binding.repositoryImage.context)
+                .load(item.owner?.avatarUrl)
+                .into(binding.repositoryImage)
 //            binding.textViewDescription.text = article.description
 //            binding.textViewSource.text = article.source.name
 //            Glide.with(binding.imageViewBanner.context)
