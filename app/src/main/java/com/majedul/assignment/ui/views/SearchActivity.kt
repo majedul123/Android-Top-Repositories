@@ -12,8 +12,6 @@ class SearchActivity : AppCompatActivity() {
     @Inject
     lateinit var searchViewModel: SearchViewModel
 
-    @Inject
-    lateinit var adapter: SearchAdapter
 
     private lateinit var binding: ActivitySearchBinding
 
