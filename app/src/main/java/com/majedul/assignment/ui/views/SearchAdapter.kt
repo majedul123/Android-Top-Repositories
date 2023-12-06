@@ -1,16 +1,18 @@
 package com.majedul.assignment.ui.views
 
+import android.content.Intent
+import android.content.Intent.FLAG_ACTIVITY_NEW_TASK
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.google.gson.Gson
 import com.majedul.assignment.data.model.Items
+import com.majedul.assignment.utils.AppConstant.ITEM_VALUE
 import com.majedul.mvvm.databinding.SearchItemBinding
 import java.text.SimpleDateFormat
 import java.util.*
-import kotlin.collections.ArrayList
 
 
 class SearchAdapter(
@@ -42,7 +44,12 @@ class SearchAdapter(
             binding.topicsList.adapter = languageAdapter
 
             itemView.setOnClickListener {
-              //  itemView.rootView.context.startActivity(Intent (itemView.rootView.context,RepositoryDetailsActivity::class.java))
+                val json = Gson().toJson(item)
+                val intent = Intent(itemView.context, SearchDetailsActivity::class.java)
+                intent.addFlags(FLAG_ACTIVITY_NEW_TASK)
+                intent.putExtra(ITEM_VALUE,json)
+                itemView.context.startActivity(intent)
+
             }
         }
     }

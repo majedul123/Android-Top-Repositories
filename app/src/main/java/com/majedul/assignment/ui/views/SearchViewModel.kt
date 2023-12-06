@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.launch
 
-class SearchViewModel(private val topHeadlineRepository: DataRepository) : ViewModel() {
+class SearchViewModel(private val searchRepository: DataRepository) : ViewModel() {
 
     private val _uiState = MutableStateFlow<UiState<List<Items>>>(UiState.Loading)
 
@@ -25,7 +25,7 @@ class SearchViewModel(private val topHeadlineRepository: DataRepository) : ViewM
     private fun fetchSearchData() {
         Log.d(TAG," on fetchSearchData method")
         viewModelScope.launch {
-            topHeadlineRepository.getSearchItems("android","stars")
+            searchRepository.getSearchItems("android","stars")
                 .catch { e ->
                     _uiState.value = UiState.Error(e.toString())
                 }

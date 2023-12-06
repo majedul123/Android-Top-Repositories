@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">Top Android Repositories</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="flutter_flutter">Flutter/Flutter</string>
+    <string name="st_public">Public</string>
+    <string name="description">Android is an operating system built by google designed for mobile devices</string>
+    <string name="flutter_dev">Flutter.dev</string>
+    <string name="bsd_3_clause_license">BSD-3-Clause-License</string>
+    <string name="notifications">Notifications</string>
+    <string name="star">Star</string>
+    <string name="code">Code</string>
+    <string name="activity">Activity</string>
+    <string name="issues">Issues</string>
+    <string name="go_to_file">Go to file</string>
 </resources>
