@@ -350,7 +350,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_8dp"
-                android:text="master"
+                tools:text="master"
                 android:textColor="@color/black"
                 android:textStyle="bold" />
 
@@ -440,7 +440,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_8dp"
-                    android:text="engine-flutter-autoroll"
+                    tools:text="engine-flutter-autoroll"
                     android:id="@+id/engine_name"
                     android:textColor="@color/black"
                     android:textStyle="bold" />
@@ -470,7 +470,7 @@
                     android:id="@+id/update_time"
                     app:layout_constraintEnd_toStartOf="@+id/history_icon"
                     android:layout_marginStart="@dimen/vertical_padding"
-                    android:text ="2 hours ago"
+                    tools:text ="2 hours ago"
                     />
 
                 <androidx.appcompat.widget.AppCompatImageView
@@ -491,7 +491,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="View code"
+                android:text="@string/view_code"
                 android:textSize="14sp"
                  android:gravity="center"
                 android:textAlignment="center"
@@ -525,7 +525,7 @@
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
          app:layout_constraintStart_toEndOf="@+id/menu_icon"
-         android:text="README.md"
+         android:text="@string/readme_md"
          android:textStyle="bold"
          android:textColor="@color/black"
          android:layout_marginStart="@dimen/vertical_padding"

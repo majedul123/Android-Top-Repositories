@@ -13,4 +13,6 @@
     <string name="activity">Activity</string>
     <string name="issues">Issues</string>
     <string name="go_to_file">Go to file</string>
+    <string name="view_code">View code</string>
+    <string name="readme_md">README.md</string>
 </resources>

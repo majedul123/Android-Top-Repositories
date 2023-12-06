@@ -21,10 +21,10 @@ class ActivityModule(private val activity: AppCompatActivity) {
     }
 
     @Provides
-    fun provideSearchViewModel(topHeadlineRepository: DataRepository): SearchViewModel {
+    fun provideSearchViewModel(dataRepository: DataRepository): SearchViewModel {
         return ViewModelProvider(activity,
             ViewModelProviderFactory(SearchViewModel::class) {
-                SearchViewModel(topHeadlineRepository)
+                SearchViewModel(dataRepository)
             })[SearchViewModel::class.java]
     }
     @Provides
