@@ -43,13 +43,7 @@ class SearchActivity : AppCompatActivity() {
     private fun setupUI() {
         val recyclerView = binding.recyclerView
         recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.addItemDecoration(
-            DividerItemDecoration(
-                recyclerView.context,
-                (recyclerView.layoutManager as LinearLayoutManager).orientation
-            )
-        )
-      recyclerView.adapter = adapter
+        recyclerView.adapter = adapter
     }
 
     private fun setupObserver() {
